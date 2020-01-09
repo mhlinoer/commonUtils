@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * 文件监听线程类
+ * 文件监听线程类,监听文件的修改
  */
 public class FileWatcherRunnable implements Runnable {
 

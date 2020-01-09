@@ -10,12 +10,14 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -226,5 +228,39 @@ public class CommonHelper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 文件写入工具
+     * 按行写入
+     * @param fileName  文件名
+     * @param content   内容
+     */
+    public static void writeStrLinesToFile(String fileName, List<String> content) {
+        Path filePath = Paths.get(fileName);
+        if (!Files.exists(filePath)) {
+            try {
+                Files.createFile(filePath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            BufferedWriter bfw = Files.newBufferedWriter(filePath);
+            content.forEach(
+                    con -> {
+                        try {
+                            bfw.write(con);
+                            bfw.newLine();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+            bfw.flush();
+            bfw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
