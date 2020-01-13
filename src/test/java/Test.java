@@ -1,7 +1,9 @@
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.linoer.app.model.db.JdbcModel;
+import com.linoer.app.model.ftp.FtpConnection;
 import com.linoer.app.utils.CommonHelper;
+import com.linoer.app.utils.file.ftp.FtpUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -51,14 +53,21 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        String s = "../../../../application.yml";
-        String base = "/home/ap/asap/flume";
-        System.out.println(CommonHelper.generatorRealPath(base, s));
-//        String[] splitDir = base.split("/");
-        String[] splitDir = s.split("\\.\\./", -1);
-        System.out.println(splitDir.length);
-        for (String sp:splitDir){
-            System.out.println(sp);
-        }
+//        String s = "../../../../application.yml";
+//        String base = "/home/ap/asap/flume";
+//        System.out.println(CommonHelper.generatorRealPath(base, s));
+////        String[] splitDir = base.split("/");
+//        String[] splitDir = s.split("\\.\\./", -1);
+//        System.out.println(splitDir.length);
+//        for (String sp:splitDir){
+//            System.out.println(sp);
+//        }
+        FtpUtil ftpUtil = new FtpUtil();
+        ftpUtil.initFtp(new FtpConnection(
+                "muhenglv",
+                "10.211.55.3",
+                "lvmuheng"
+        ));
+        ftpUtil.test("/home/muhenglv", 4, 1);
     }
 }

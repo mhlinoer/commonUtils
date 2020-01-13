@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 基于okhttp的通用请求类
+ */
 public class OkHttpClients {
     private static final Logger logger = LoggerFactory.getLogger(OkHttpClients.class);
 
