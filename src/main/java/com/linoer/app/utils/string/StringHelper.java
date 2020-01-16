@@ -1,6 +1,7 @@
 package com.linoer.app.utils.string;
 
 import java.io.*;
+import java.util.regex.Pattern;
 
 public class StringHelper {
     // inputStream转String
@@ -46,6 +47,22 @@ public class StringHelper {
     // String 转outputStream
     public ByteArrayOutputStream parseOutputStream(final String in) throws Exception {
         return parse(parseInputStream(in));
+    }
+
+    public static boolean isNumber(String string) {
+        if (string == null) {
+            return false;
+        }
+        Pattern pattern = Pattern.compile("^-?\\d+(\\.\\d+)?$");
+        return pattern.matcher(string).matches();
+    }
+
+    public static boolean isStartWithNumber(String string){
+        if (string == null){
+            return false;
+        }
+        Pattern pattern = Pattern.compile("^(\\d+)(.*)");
+        return pattern.matcher(string).matches();
     }
 
 }
