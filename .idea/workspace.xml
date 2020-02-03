@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="46c9c76f-e33f-4a61-9618-13d3e68b8658" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/concurrent/SafeThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/concurrent/SafeThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/BaseGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/BaseGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/BaseGaming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/BaseGaming.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/domain/EventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/domain/EventType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/round/BaseEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/round/BaseEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/round/BaseEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/round/BaseEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/round/BaseEventSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/base/round/BaseEventSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/ChessGaming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/ChessGaming.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/ChessEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/ChessEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/ChessEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/ChessEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/ChessEventSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/ChessEventSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/imp/ChessEventHandlerImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linoer/app/games/chess/game/process/imp/ChessEventHandlerImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/linoer/app/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/linoer/app/MainServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/linoer/app/concurrent/SafeThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/linoer/app/concurrent/SafeThread.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +112,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainServer">
+  <component name="RunManager" selected="Application.TestChess">
     <configuration name="FtpUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.linoer.app.utils.file.ftp.FtpUtil" />
       <module name="All_Records" />
@@ -132,8 +146,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestChess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.linoer.app.games.chess.TestChess" />
+      <module name="All_Records" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.linoer.app.games.chess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestChess" />
         <item itemvalue="Application.MainServer" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.FtpUtil" />
@@ -169,6 +197,9 @@
       <workItem from="1578906700841" duration="719000" />
       <workItem from="1579141401392" duration="4263000" />
       <workItem from="1579161367746" duration="15696000" />
+      <workItem from="1579836594586" duration="2578000" />
+      <workItem from="1580648601040" duration="80000" />
+      <workItem from="1580693725672" duration="6449000" />
     </task>
     <servers />
   </component>

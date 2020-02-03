@@ -43,8 +43,12 @@ public class SafeThread implements Runnable{
         }));
     }
 
+    public void config(){
+
+    }
+
     @Override
     public void run() {
-
+        config();
     }
 }

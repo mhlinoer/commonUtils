@@ -2,14 +2,16 @@ package com.linoer.app.games.chess.game.process;
 
 import com.linoer.app.games.base.domain.BaseEvent;
 import com.linoer.app.games.base.round.BaseEventHandler;
+import com.linoer.app.games.chess.game.exception.BaseGameException;
 
 import java.util.Queue;
 
 public class ChessEventHandler implements BaseEventHandler{
 
-    private volatile Queue<BaseEvent> workQueue;
+    public volatile Queue<BaseEvent> workQueue;
 
     public ChessEventHandler(Queue<BaseEvent> workQueue){
+        System.out.println("ChessEventHandler constructor");
         this.workQueue = workQueue;
     }
 
@@ -19,7 +21,7 @@ public class ChessEventHandler implements BaseEventHandler{
     }
 
     @Override
-    public void process(BaseEvent event) {
+    public void process(BaseEvent event) throws BaseGameException {
 
     }
 

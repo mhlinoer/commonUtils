@@ -1,5 +1,6 @@
 package com.linoer.app.games.base.round;
 
+import com.linoer.app.games.base.domain.BaseEvent;
 import com.linoer.app.games.chess.game.exception.BaseGameException;
 
 /**
@@ -15,7 +16,7 @@ public interface BaseEventListener extends Runnable{
     void config();
 
     // 处理事件
-    void handle() throws BaseGameException;
+    void handle(BaseEvent event) throws BaseGameException;
 
     // 拉取事件
     void check() throws BaseGameException;

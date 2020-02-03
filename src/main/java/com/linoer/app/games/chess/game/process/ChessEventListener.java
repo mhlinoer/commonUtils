@@ -17,6 +17,7 @@ public class ChessEventListener implements BaseEventListener {
     private List<BaseEventHandler> handlerList;
 
     public ChessEventListener(Queue<BaseEvent> workQueue){
+        System.out.println("ChessEventListener constructor");
         this.workQueue = workQueue;
         this.handlerList = new ArrayList<>();
         this.config();
@@ -24,6 +25,7 @@ public class ChessEventListener implements BaseEventListener {
 
     @Override
     public void registeredHandler(BaseEventHandler handler) {
+        System.out.println("ChessEventListener registeredHandler:" + handler.toString());
         handlerList.add(handler);
     }
 
@@ -34,32 +36,44 @@ public class ChessEventListener implements BaseEventListener {
 
     @Override
     public void config() {
-
+        System.out.println("ChessEventListener config");
     }
 
     @Override
-    public void handle() throws BaseGameException {
+    public void handle(BaseEvent event) throws BaseGameException {
+        event.setTRACE_ID(event.getTRACE_ID().append(TRACE).append(CommonHelper.getCurrentDateTimeStr()));
+        event.setEventType(EventType.START_HANDLE);
+        handlerList.forEach(handler -> {
+            try {
+                handler.process(event);
+            } catch (BaseGameException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    /**
+     * 校验时间是否合法
+     * @throws BaseGameException
+     */
+    @Override
+    public void check() throws BaseGameException{
+        System.out.println("checking event");
+        if (workQueue.isEmpty()){
+            return;
+        }
         BaseEvent event = workQueue.poll();
         if (null == event){
             throw new BaseGameException();
         }
-        event.setTRACE_ID(event.getTRACE_ID().append(TRACE).append(CommonHelper.getCurrentDateTimeStr()));
-        event.setEventType(EventType.START_HANDLE);
-        handlerList.forEach(handler -> handler.process(event));
-    }
-
-    @Override
-    public void check() throws BaseGameException{
-
+        handle(event);
     }
 
     @Override
     public void run() {
         try {
-            // 检验事件
+            // 检验并处理事件
             check();
-            // 处理事件
-            handle();
         } catch (BaseGameException e) {
             e.printStackTrace();
         }

@@ -15,5 +15,6 @@ public enum EventType {
     OFFLINE,
     START_HANDLE,
     END_HANDLE,
-    ERROR_HANDLE
+    ERROR_HANDLE,
+    EXIT
 }

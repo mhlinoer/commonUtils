@@ -1,14 +1,11 @@
 package com.linoer.app.games.base;
 
-public interface BaseGame extends Runnable{
+public interface BaseGame{
     // 初始化
     void init();
 
     // 准备
     void ready();
-
-    // 开始
-    void start();
 
     // 游戏中
     void gaming();

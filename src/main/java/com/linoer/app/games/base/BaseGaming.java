@@ -4,21 +4,24 @@ import com.linoer.app.games.base.domain.BaseGameConfig;
 import com.linoer.app.games.base.domain.BasePlayer;
 import com.linoer.app.games.base.round.BaseEventHandler;
 import com.linoer.app.games.base.round.BaseEventListener;
+import com.linoer.app.games.base.round.BaseEventSource;
 
 import java.util.List;
 
 /**
  * 基础游戏主进程
  */
-public class BaseGaming implements BaseGame{
+public class BaseGaming implements BaseGame, Runnable{
     // 玩家信息
     public List<BasePlayer> playerList = null;
     // 游戏参数配置
     public BaseGameConfig gameConfig = null;
     // 事件监听器
-    public BaseEventListener eventListener = null;
+    protected BaseEventListener eventListener = null;
     // 事件处理器
-    public BaseEventHandler eventHandler = null;
+    protected BaseEventHandler eventHandler = null;
+    // 事件生成器
+    protected BaseEventSource eventSource = null;
 
     @Override
     public void init() {
@@ -27,11 +30,6 @@ public class BaseGaming implements BaseGame{
 
     @Override
     public void ready() {
-
-    }
-
-    @Override
-    public void start() {
 
     }
 
@@ -52,6 +50,5 @@ public class BaseGaming implements BaseGame{
 
     @Override
     public void run() {
-
     }
 }
